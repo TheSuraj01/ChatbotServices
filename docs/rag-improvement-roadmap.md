@@ -1,6 +1,6 @@
 # RAG Improvement Roadmap — Decisions, Results, Next Steps
 
-> **Context:** engineering notes from this project's first deployment, a single-person portfolio assistant (the owner is called "Alex" here). That corpus and its labels are private and not shipped; the shipped benchmark (`python -m benchmarks.evaluate`) runs on `data/sample_entries.json`. Re-run on that private corpus, the current generic pipeline reproduces the final production numbers in the results below exactly.
+> **Context:** engineering notes from this project's first deployment, a single-person portfolio assistant (the owner is called "Suraj" here). That corpus and its labels are private and not shipped; the shipped benchmark (`python -m benchmarks.evaluate`) runs on `data/sample_entries.json`. Re-run on that private corpus, the current generic pipeline reproduces the final production numbers in the results below exactly.
 
 Companion to [rag-architecture-assessment.md](rag-architecture-assessment.md) (the
 "before" picture) and [rag-benchmark-baseline.md](rag-benchmark-baseline.md) (the

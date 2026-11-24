@@ -1,6 +1,6 @@
 # RAG Benchmark — Baseline
 
-> **Context:** engineering notes from this project's first deployment, a single-person portfolio assistant (the owner is called "Alex" here). That corpus and its labels are private and not shipped; the shipped benchmark (`python -m benchmarks.evaluate`) runs on `data/sample_entries.json`. Re-run on that private corpus, the current generic pipeline reproduces the final production numbers in [rag-improvement-roadmap.md](rag-improvement-roadmap.md) exactly.
+> **Context:** engineering notes from this project's first deployment, a single-person portfolio assistant (the owner is called "Suraj" here). That corpus and its labels are private and not shipped; the shipped benchmark (`python -m benchmarks.evaluate`) runs on `data/sample_entries.json`. Re-run on that private corpus, the current generic pipeline reproduces the final production numbers in [rag-improvement-roadmap.md](rag-improvement-roadmap.md) exactly.
 
 Measured on the **original pipeline, before any change**, so later numbers have
 something honest to compare against. Raw output was kept with the private corpus (not shipped).
@@ -17,7 +17,7 @@ something honest to compare against. Raw output was kept with the private corpus
 | Type | Cases | What it probes |
 |---|---|---|
 | exact | 16 | names / identifiers / numbers ("What is Tidewatch?", "CGPA?") |
-| semantic | 15 | paraphrase and synonyms ("Where did Alex study?") |
+| semantic | 15 | paraphrase and synonyms ("Where did Suraj study?") |
 | list | 5 | "list all X" — answer spans every record of a category |
 | multi | 3 | answer spans several categories |
 | typo | 3 | misspellings ("tidewatch monitr") |
@@ -83,11 +83,11 @@ Query embedding 5 ms mean; in-memory search < 1 ms; indexing 35 records 2.9 s.
 
 ## What the baseline exposed
 
-- **"What projects has Alex worked on?" retrieved none of the 8 project records.**
+- **"What projects has Suraj worked on?" retrieved none of the 8 project records.**
   Only `content` was embedded, and project descriptions don't contain the word
   "project"; bios and skills ranked higher.
-- **The 0.45 cosine floor never rejected anything.** Every record names Alex, so
-  "What is Alex's favorite movie?" scores 0.59 and "date of birth" 0.70 —
+- **The 0.45 cosine floor never rejected anything.** Every record names Suraj, so
+  "What is Suraj's favorite movie?" scores 0.59 and "date of birth" 0.70 —
   higher than real answers such as Tidewatch (0.62). The threshold gave no protection.
 - **Rare identifiers fail in dense-only search:** "What is Tidewatch?" missed the
   only record mentioning it, so the bot refused an answerable question.

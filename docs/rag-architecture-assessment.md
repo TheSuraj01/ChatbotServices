@@ -1,6 +1,6 @@
 # RAG Architecture Assessment
 
-> **Context:** engineering notes from this project's first deployment, a single-person portfolio assistant (the owner is called "Alex" here). That corpus and its labels are private and not shipped; the shipped benchmark (`python -m benchmarks.evaluate`) runs on `data/sample_entries.json`. Re-run on that private corpus, the current generic pipeline reproduces the final production numbers in [rag-improvement-roadmap.md](rag-improvement-roadmap.md) exactly.
+> **Context:** engineering notes from this project's first deployment, a single-person portfolio assistant (the owner is called "Suraj" here). That corpus and its labels are private and not shipped; the shipped benchmark (`python -m benchmarks.evaluate`) runs on `data/sample_entries.json`. Re-run on that private corpus, the current generic pipeline reproduces the final production numbers in [rag-improvement-roadmap.md](rag-improvement-roadmap.md) exactly.
 
 ## The system being optimised
 
@@ -60,7 +60,7 @@ loop, blocking every chat request while it embedded.
    nothing lexical backed them up.
 3. **No out-of-scope protection:** every record names the owner, so any
    personal question scores 0.59–0.70 cosine. A cosine floor cannot separate
-   "about Alex and answerable" from "about Alex but not in the knowledge base".
+   "about Suraj and answerable" from "about Suraj but not in the knowledge base".
    Only a model that reads query and passage together (a cross-encoder) can.
 4. **Follow-ups:** no history, so references had nothing to resolve against.
 5. **Source noise:** sources were "everything retrieved", not "what the answer used".

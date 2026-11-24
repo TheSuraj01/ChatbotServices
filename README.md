@@ -130,7 +130,7 @@ cp .env.example .env                 # Windows: copy .env.example .env
    [`data/sample_entries.json`](data/sample_entries.json) → **Import**. This adds 18 rows of a
    fictional engineer's portfolio across all seven tabs.
 5. Click **Sync to Qdrant** and watch the three steps complete.
-6. Open **Test endpoint** and ask *"What projects has Alex built?"*. You'll get a cited answer,
+6. Open **Test endpoint** and ask *"What projects has Suraj built?"*. You'll get a cited answer,
    and the retrieved source chunks appear under it.
 
 Interactive API docs are at <http://localhost:8000/docs>.
@@ -190,19 +190,19 @@ Restrict it to your domains in production.
 ```bash
 curl -X POST https://your-app.example.com/api/v1/chat \
   -H "Content-Type: application/json" \
-  -d '{"message": "How can I contact Alex?"}'
+  -d '{"message": "How can I contact Suraj?"}'
 ```
 
 ```json
 {
-  "reply": "Email alex@example.com or use the contact form on https://alex.example.com; Alex usually replies within two working days [1].",
+  "reply": "Email Suraj@example.com or use the contact form on https://Suraj.example.com; Suraj usually replies within two working days [1].",
   "sources": [
     {
       "entry_id": "FAQ001",
-      "title": "How can I contact Alex Rivera?",
+      "title": "How can I contact Suraj Rivera?",
       "category": "FAQs",
-      "url": "https://alex.example.com/contact",
-      "snippet": "You can contact Alex Rivera by email at alex@example.com or through the contact form…",
+      "url": "https://Suraj.example.com/contact",
+      "snippet": "You can contact Suraj Rivera by email at Suraj@example.com or through the contact form…",
       "score": 0.8123
     }
   ],

@@ -543,15 +543,15 @@ HISTORY = [
 @pytest.mark.parametrize(
     "question, expected",
     [
-        ("What projects has Alex worked on?", ["Projects"]),  # plural category = list question
+        ("What projects has Suraj worked on?", ["Projects"]),  # plural category = list question
         ("List all the articles you have.", ["Articles"]),
         ("What are your technical skills?", ["Technical_Skills"]),
         ("Which skills do you have?", ["Technical_Skills"]),  # head noun alone
         ("List every billing topic", ["Billing"]),  # explicit cue, singular name
         ("Show me all your policies", ["Policy"]),  # y -> ies plural
         ("What is the security and privacy policy?", []),  # names categories, but not a list question
-        ("What technologies did Alex use to build Zephyr?", []),
-        ("Where did Alex study?", []),
+        ("What technologies did Suraj use to build Zephyr?", []),
+        ("Where did Suraj study?", []),
     ],
 )
 def test_category_routing_only_for_list_questions(question, expected):
